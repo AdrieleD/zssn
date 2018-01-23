@@ -1,0 +1,381 @@
+  [1m[36m (70.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (65.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateSurvivors (20180123054645)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "survivors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "gender" varchar, "lastLatitude" decimal, "lastLongitude" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180123054645"]]
+  [1m[35m (66.2ms)[0m  commit transaction
+Migrating to CreateInventories (20180123054659)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "inventories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "water" integer, "food" integer, "medication" integer, "ammunition" integer, "survivor_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_inventories_on_survivor_id" ON "inventories" ("survivor_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20180123054659"]]
+  [1m[36m (83.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_inventories_on_survivor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_inventories_on_survivor_id' AND type='index'
+[0m
+
+
+Started GET "/inventories" for 127.0.0.1 at 2018-01-23 03:47:29 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by InventoriesController#index as HTML
+  [1m[35mInventory Load (0.1ms)[0m  SELECT "inventories".* FROM "inventories"
+  Rendered inventories/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1568ms (Views: 1548.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/inventories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/scaffolds.self-61cdc6d502c7301984ec0223a89d845a2384dfed8c754b5e94b2b6a4078f6a87.css?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/survivors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/jquery.self-c03f4eaf1119e6e68820418ad53c328101312ebc906325c60ad7c32edaa360b7.js?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/inventories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/survivors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2018-01-23 03:47:30 -0200
+
+
+Started GET "/inventories/new" for 127.0.0.1 at 2018-01-23 03:47:33 -0200
+Processing by InventoriesController#new as HTML
+  Rendered inventories/_form.html.erb (26.6ms)
+  Rendered inventories/new.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 87ms (Views: 79.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/inventories" for 127.0.0.1 at 2018-01-23 03:47:39 -0200
+Processing by InventoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yrXAtK32krSqoPYySbPmYBPVC1bSVAW27Xgo6EZGZUXnBp3hv5Um74tFPpQ5mSKcZrw6kuhD+Of9LAnMkv7bqg==", "inventory"=>{"water"=>"1", "food"=>"1", "medication"=>"1", "ammunition"=>"1", "survivor_id"=>""}, "commit"=>"Create Inventory"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "inventories" ("water", "food", "medication", "ammunition", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["water", 1], ["food", 1], ["medication", 1], ["ammunition", 1], ["created_at", "2018-01-23 05:47:39.740894"], ["updated_at", "2018-01-23 05:47:39.740894"]]
+  [1m[36m (47.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/inventories/1
+Completed 302 Found in 56ms (ActiveRecord: 48.0ms)
+
+
+Started GET "/inventories/1" for 127.0.0.1 at 2018-01-23 03:47:39 -0200
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mInventory Load (0.3ms)[0m  SELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered inventories/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 51ms (Views: 41.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2018-01-23 03:47:41 -0200
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1mSELECT "inventories".* FROM "inventories"[0m
+  Rendered inventories/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 50.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/inventories/1" for 127.0.0.1 at 2018-01-23 03:47:44 -0200
+Processing by InventoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QUq+rCdWWs/gkmn6rUE/CFj1K5nywEJKo36lt443fmZs+eP5NTXulMF3oVzda/v0LZwaXcjXvxuzKoSTWo/AiQ==", "id"=>"1"}
+  [1m[35mInventory Load (0.1ms)[0m  SELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "inventories" WHERE "inventories"."id" = ?  [["id", 1]]
+  [1m[36m (119.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/inventories
+Completed 302 Found in 127ms (ActiveRecord: 120.3ms)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2018-01-23 03:47:44 -0200
+Processing by InventoriesController#index as HTML
+  [1m[35mInventory Load (0.2ms)[0m  SELECT "inventories".* FROM "inventories"
+  Rendered inventories/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/survivors" for 127.0.0.1 at 2018-01-23 03:51:27 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SurvivorsController#index as HTML
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT "survivors".* FROM "survivors"
+  Rendered survivors/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 148ms (Views: 138.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/survivors/new" for 127.0.0.1 at 2018-01-23 03:51:29 -0200
+Processing by SurvivorsController#new as HTML
+  Rendered survivors/_form.html.erb (16.9ms)
+  Rendered survivors/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 52ms (Views: 42.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/survivors" for 127.0.0.1 at 2018-01-23 03:51:50 -0200
+Processing by SurvivorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Ywn1QbSuzQp36qpdy4Q+ywAiahAGkgR9PFODLgqfj7QP3qAFLEPbwg6Yg8HBNQHWWm4bHoNtUDkpW8obJLA0Q==", "survivor"=>{"name"=>"Adriele", "age"=>"23", "gender"=>"F", "lastLatitude"=>"23.4", "lastLongitude"=>"13"}, "commit"=>"Create Survivor"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "survivors" ("name", "age", "gender", "lastLatitude", "lastLongitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Adriele"], ["age", 23], ["gender", "F"], ["lastLatitude", 23.4], ["lastLongitude", 13.0], ["created_at", "2018-01-23 05:51:50.177714"], ["updated_at", "2018-01-23 05:51:50.177714"]]
+  [1m[36m (128.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/survivors/1
+Completed 302 Found in 135ms (ActiveRecord: 128.5ms)
+
+
+Started GET "/survivors/1" for 127.0.0.1 at 2018-01-23 03:51:50 -0200
+Processing by SurvivorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvivor Load (0.3ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered survivors/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 47ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/survivors" for 127.0.0.1 at 2018-01-23 03:51:52 -0200
+Processing by SurvivorsController#index as HTML
+  [1m[36mSurvivor Load (0.1ms)[0m  [1mSELECT "survivors".* FROM "survivors"[0m
+  Rendered survivors/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/survivors" for 127.0.0.1 at 2018-01-23 03:52:26 -0200
+Processing by SurvivorsController#index as HTML
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT "survivors".* FROM "survivors"
+  Rendered survivors/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/survivors/new" for 127.0.0.1 at 2018-01-23 03:55:49 -0200
+Processing by SurvivorsController#new as HTML
+  Rendered survivors/_form.html.erb (2.3ms)
+  Rendered survivors/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 52ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/survivors" for 127.0.0.1 at 2018-01-23 03:56:05 -0200
+Processing by SurvivorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tUo0PtKfRQWP2gI/mPM8K0PLgutHiETK34SEqUxW3kCY+WlrwPzxXq4/ypno2fjXNqKzL32fuZvP0KWNmO5grw==", "survivor"=>{"name"=>"Cristina", "age"=>"30", "gender"=>"F", "lastLatitude"=>"12.4", "lastLongitude"=>"24.6"}, "commit"=>"Create Survivor"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "survivors" ("name", "age", "gender", "lastLatitude", "lastLongitude", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "Cristina"], ["age", 30], ["gender", "F"], ["lastLatitude", 12.4], ["lastLongitude", 24.6], ["created_at", "2018-01-23 05:56:05.952053"], ["updated_at", "2018-01-23 05:56:05.952053"]]
+  [1m[36m (136.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/survivors/2
+Completed 302 Found in 143ms (ActiveRecord: 137.1ms)
+
+
+Started GET "/survivors/2" for 127.0.0.1 at 2018-01-23 03:56:06 -0200
+Processing by SurvivorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSurvivor Load (0.5ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered survivors/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 55ms (Views: 50.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/survivors/2" for 127.0.0.1 at 2018-01-23 03:57:07 -0200
+Processing by SurvivorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSurvivor Load (0.4ms)[0m  [1mSELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered survivors/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 71ms (Views: 67.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2018-01-23 04:05:13 -0200
+Processing by InventoriesController#index as HTML
+  [1m[35mInventory Load (0.1ms)[0m  SELECT "inventories".* FROM "inventories"
+  Rendered inventories/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 50ms (Views: 39.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventories/new" for 127.0.0.1 at 2018-01-23 04:05:15 -0200
+Processing by InventoriesController#new as HTML
+  Rendered inventories/_form.html.erb (24.6ms)
+  Rendered inventories/new.html.erb within layouts/application (25.6ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `author_id' for #<Inventory:0x007f929dd417c8>):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :survivor_id %><br>
+    32:     <%= f.collection_select(:author_id, Survivor.all, :id, :name, include_blank: true) %>
+    33:   </div>
+    34:   <div class="actions">
+    35:     <%= f.submit %>
+  app/views/inventories/_form.html.erb:32:in `block in _app_views_inventories__form_html_erb__349145952032770461_70133846076960'
+  app/views/inventories/_form.html.erb:1:in `_app_views_inventories__form_html_erb__349145952032770461_70133846076960'
+  app/views/inventories/new.html.erb:3:in `_app_views_inventories_new_html_erb___1320153237525504132_70133845892620'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (6.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/console.js.erb within layouts/javascript (13.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/index.html.erb (25.7ms)
+
+
+Started GET "/inventories/new" for 127.0.0.1 at 2018-01-23 04:05:15 -0200
+Processing by InventoriesController#new as HTML
+  Rendered inventories/_form.html.erb (12.9ms)
+  Rendered inventories/new.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `author_id' for #<Inventory:0x00000003425bf0>):
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :survivor_id %><br>
+    32:     <%= f.collection_select(:author_id, Survivor.all, :id, :name, include_blank: true) %>
+    33:   </div>
+    34:   <div class="actions">
+    35:     <%= f.submit %>
+  app/views/inventories/_form.html.erb:32:in `block in _app_views_inventories__form_html_erb__349145952032770461_27006040'
+  app/views/inventories/_form.html.erb:1:in `_app_views_inventories__form_html_erb__349145952032770461_27006040'
+  app/views/inventories/new.html.erb:3:in `_app_views_inventories_new_html_erb___1320153237525504132_27253140'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/web_console/templates/index.html.erb (23.6ms)
+
+
+Started GET "/inventories/new" for 127.0.0.1 at 2018-01-23 04:05:48 -0200
+Processing by InventoriesController#new as HTML
+  [1m[36mSurvivor Load (0.6ms)[0m  [1mSELECT "survivors".* FROM "survivors"[0m
+  Rendered inventories/_form.html.erb (7.9ms)
+  Rendered inventories/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/inventories" for 127.0.0.1 at 2018-01-23 04:05:54 -0200
+Processing by InventoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+AzgiT/yfEZKcgvzn1/reAYbGMdgTy6Poe4Ktaw74crVv73cLZHIHWuXw1XvdS+Ec3IpA1pY096xuiuReINfJQ==", "inventory"=>{"water"=>"1", "food"=>"1", "medication"=>"2", "ammunition"=>"1", "survivor_id"=>"1"}, "commit"=>"Create Inventory"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "inventories" ("water", "food", "medication", "ammunition", "survivor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["water", 1], ["food", 1], ["medication", 2], ["ammunition", 1], ["survivor_id", 1], ["created_at", "2018-01-23 06:05:54.512225"], ["updated_at", "2018-01-23 06:05:54.512225"]]
+  [1m[35m (78.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/inventories/2
+Completed 302 Found in 85ms (ActiveRecord: 79.2ms)
+
+
+Started GET "/inventories/2" for 127.0.0.1 at 2018-01-23 04:05:54 -0200
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInventory Load (0.4ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered inventories/show.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 54ms (Views: 51.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/inventories/2" for 127.0.0.1 at 2018-01-23 04:06:19 -0200
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInventory Load (0.4ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSurvivor Load (0.2ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered inventories/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/inventories/2" for 127.0.0.1 at 2018-01-23 04:06:22 -0200
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInventory Load (0.1ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered inventories/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inventories/2" for 127.0.0.1 at 2018-01-23 04:07:08 -0200
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInventory Load (0.4ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSurvivor Load (0.3ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered inventories/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 97ms (Views: 93.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/inventories/2/edit" for 127.0.0.1 at 2018-01-23 04:07:20 -0200
+Processing by InventoriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mInventory Load (0.1ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT "survivors".* FROM "survivors"
+  Rendered inventories/_form.html.erb (3.7ms)
+  Rendered inventories/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2018-01-23 04:07:22 -0200
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.9ms)[0m  [1mSELECT "inventories".* FROM "inventories"[0m
+  [1m[35mSurvivor Load (0.3ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered inventories/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 55ms (Views: 52.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2018-01-23 04:15:50 -0200
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.3ms)[0m  [1mSELECT "inventories".* FROM "inventories"[0m
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered inventories/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 52ms (Views: 48.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/inventories/new" for 127.0.0.1 at 2018-01-23 04:15:52 -0200
+Processing by InventoriesController#new as HTML
+  [1m[36mSurvivor Load (0.2ms)[0m  [1mSELECT "survivors".* FROM "survivors"[0m
+  Rendered inventories/_form.html.erb (5.1ms)
+  Rendered inventories/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/inventories" for 127.0.0.1 at 2018-01-23 04:16:00 -0200
+Processing by InventoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8jN+eh4amxLv8OVfqH1ZoQRog9+Xm6iFyLg/DSDmXZ7fgCMvDHkvSc4VLfnYV51dcQGyG62MVdTY7B4p9F7jcQ==", "inventory"=>{"water"=>"1", "food"=>"1", "medication"=>"0", "ammunition"=>"1", "survivor_id"=>"2"}, "commit"=>"Create Inventory"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "inventories" ("water", "food", "medication", "ammunition", "survivor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["water", 1], ["food", 1], ["medication", 0], ["ammunition", 1], ["survivor_id", 2], ["created_at", "2018-01-23 06:16:00.816263"], ["updated_at", "2018-01-23 06:16:00.816263"]]
+  [1m[35m (76.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/inventories/3
+Completed 302 Found in 84ms (ActiveRecord: 77.3ms)
+
+
+Started GET "/inventories/3" for 127.0.0.1 at 2018-01-23 04:16:00 -0200
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mInventory Load (0.9ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSurvivor Load (0.3ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered inventories/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 69ms (Views: 59.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2018-01-23 04:16:02 -0200
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1mSELECT "inventories".* FROM "inventories"[0m
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSurvivor Load (0.1ms)[0m  [1mSELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered inventories/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 34.6ms | ActiveRecord: 0.3ms)

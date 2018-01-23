@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @survivor.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @survivor.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @survivor.gender %>
+</p>
+
+<p>
+  <strong>Last Latitude:</strong>
+  <%= @survivor.lastLatitude %>
+</p>
+
+<p>
+  <strong>Last Longitude:</strong>
+  <%= @survivor.lastLongitude %>
+</p>
+
+<%= link_to 'Edit', edit_survivor_path(@survivor) %> |
+<%= link_to 'Back', survivors_path %>

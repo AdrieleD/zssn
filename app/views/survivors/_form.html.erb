@@ -1,0 +1,37 @@
+<%= form_for(@survivor) do |f| %>
+  <% if @survivor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survivor.errors.count, "error") %> prohibited this survivor from being saved:</h2>
+
+      <ul>
+      <% @survivor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.select(:gender, options_for_select([["Female", "F"], ["Male", "M"]]), {include_blank: true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :lastLatitude %><br>
+    <%= f.text_field :lastLatitude %>
+  </div>
+  <div class="field">
+    <%= f.label :lastLongitude %><br>
+    <%= f.text_field :lastLongitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

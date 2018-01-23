@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Survivors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Last Latitude</th>
+      <th>Last Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @survivors.each do |survivor| %>
+      <tr>
+        <td><%= survivor.name %></td>
+        <td><%= survivor.age %></td>
+        <td><%= survivor.gender %></td>
+        <td><%= survivor.lastLatitude %></td>
+        <td><%= survivor.lastLongitude %></td>
+        <td><%= link_to 'Show', survivor %></td>
+        <td><%= link_to 'Edit', edit_survivor_path(survivor) %></td>
+        <td><%= link_to 'Destroy', survivor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Survivor', new_survivor_path %>

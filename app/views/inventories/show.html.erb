@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Water:</strong>
+  <%= @inventory.water %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @inventory.food %>
+</p>
+
+<p>
+  <strong>Medication:</strong>
+  <%= @inventory.medication %>
+</p>
+
+<p>
+  <strong>Ammunition:</strong>
+  <%= @inventory.ammunition %>
+</p>
+
+<p>
+  <strong>Survivor:</strong>
+  <%= @inventory.survivor.name %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>
