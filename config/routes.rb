@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  resources :contamination_reports
   root 'welcome#index'
   resources :inventories
   resources :survivors
+  resources :contamination_reports
+
 
   get 'welcome' => 'welcome#index'
+  get 'report' => 'report#infected'
+  #get 'report' => 'report#non_infected'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

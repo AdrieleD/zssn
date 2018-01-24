@@ -1,0 +1,21 @@
+<%= form_for(@contamination_report) do |f| %>
+  <% if @contamination_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contamination_report.errors.count, "error") %> prohibited this contamination_report from being saved:</h2>
+
+      <ul>
+      <% @contamination_report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :survivor_id %><br>
+    <%= f.collection_select(:survivor_id, Survivor.all, :id, :name, include_blank: true) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

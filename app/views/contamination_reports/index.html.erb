@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing contaminated survivors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contamination_reports.each do |contamination_report| %>
+      <tr>
+        <td><%= contamination_report.survivor.name %></td>
+        <td><%= link_to 'Show', contamination_report %></td>
+        <td><%= link_to 'Destroy', contamination_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contamination report', new_contamination_report_path %>
