@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
 
   get 'welcome' => 'welcome#index'
-  get 'report' => 'report#infected'
-  #get 'report' => 'report#non_infected'
+  get 'report' => 'report#index'
+  get 'report/infected'
+  get 'report/non_infected'
 
 
 
