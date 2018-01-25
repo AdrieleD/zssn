@@ -31,13 +31,11 @@ This project was created to solve [this](https://gist.github.com/akitaonrails/71
  ```
 
 # Running
-
+```
 cd zssn/
-
 rails s
-
 Link: http://localhost:3000/
-
+```
 # Notes
 
 * The parameters are started with a default value: 0
