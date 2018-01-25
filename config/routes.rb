@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   get 'report' => 'report#index'
   get 'report/infected'
   get 'report/non_infected'
-  get 'report/points_lost'
   get 'report/average_resources'
-
+  get 'report/points_lost'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

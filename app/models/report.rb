@@ -12,9 +12,9 @@ class Report < ActiveRecord::Base
 
   def self.non_infected
     if Survivor.any? #verifica se tem algum sobrevivente registrado
-      non_infected_survivors = Survivor.select(&:non_infected_survivor?)
+      non_infected = Survivor.select(&:non_infected_survivor?)
 
-      return percentage_non_infected = (non_infected_survivors.length.to_f / Survivor.count) * 100 #retorna a porcentagem de sobreviventes infectados
+      return percentage_non_infected = (non_infected.length.to_f / Survivor.count) * 100 #retorna a porcentagem de sobreviventes infectados
 
     end
   end
@@ -28,13 +28,15 @@ class Report < ActiveRecord::Base
 
       survivors = Survivor.select(&:non_infected_survivor?)
       survivors.each do |s|
-        water += s.inventory.water
-        food += s.inventory.food
-        medication += s.inventory.medication
-        ammunition += s.inventory.ammunition
+        if s.inventory != nil
+          water += s.inventory.water
+          food += s.inventory.food
+          medication += s.inventory.medication
+          ammunition += s.inventory.ammunition
+        end
       end
 
-      report = {Water: (water.to_f / Survivor.count), Food: (food.to_f  / Survivor.count), Medication: (medication.to_f / Survivor.count), Ammunition: (ammunition.to_f / Survivor.count)}
+      report = {Water: (water.to_f / survivors.count), Food: (food.to_f  / survivors.length), Medication: (medication.to_f / survivors.length), Ammunition: (ammunition.to_f / survivors.length)}
     end
   end
 
@@ -45,7 +47,7 @@ class Report < ActiveRecord::Base
       medication = 0
       ammunition = 0
 
-      survivors = Survivor.select(&:infected_survivor?)
+      survivors = Survivor.select(&:infected_survivor?)  #retorna sobreviventes infectados
       survivors.each do |s|
         water += s.inventory.water
         food += s.inventory.food

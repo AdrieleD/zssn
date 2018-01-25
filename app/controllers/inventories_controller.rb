@@ -25,6 +25,7 @@ class InventoriesController < ApplicationController
   # POST /inventories
   # POST /inventories.json
   def create
+
     @inventory = Inventory.new(inventory_params)
 
     respond_to do |format|
