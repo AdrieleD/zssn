@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br>
-    <%= f.select(:gender, options_for_select([["Female", "F"], ["Male", "M"]]), {include_blank: true}) %>
+    <%= f.select(:gender, options_for_select([["Female", "F"], ["Male", "M"]], @survivor.gender), {include_blank: true}) %>
   </div>
   <div class="field">
     <%= f.label :lastLatitude %><br>
