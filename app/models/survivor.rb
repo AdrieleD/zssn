@@ -7,11 +7,14 @@ class Survivor < ActiveRecord::Base
   validates :lastLongitude, presence: true
 
   has_one :inventory, dependent: :destroy
-  has_many :contamination_reports
+  has_many :contamination_reports, dependent: :destroy
   has_many :reports
-
 
   def infected_survivor?
     contamination_reports.length >= 3
+  end
+
+  def non_infected_survivor?
+    contamination_reports.length < 3
   end
 end
