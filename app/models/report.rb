@@ -19,6 +19,7 @@ class Report < ActiveRecord::Base
     end
   end
 
+  #média de recursos disponíveis por sobreviventes não infectados
   def self.average_resources
     if Survivor.any? #verifica se tem algum sobrevivente registrado
       water = 0
@@ -40,6 +41,7 @@ class Report < ActiveRecord::Base
     end
   end
 
+ #pontos perdidos devido a sobreviventes infectados
   def self.points_lost
     if Survivor.any? #verifica se tem algum sobrevivente registrado
       water = 0

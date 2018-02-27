@@ -11,7 +11,7 @@ class Survivor < ActiveRecord::Base
   has_many :reports
 
   def infected_survivor?
-    contamination_reports.length >= 3
+    contamination_reports.length >= 3 
   end
 
   def non_infected_survivor?

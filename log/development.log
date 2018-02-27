@@ -17698,3 +17698,281 @@ Started GET "/welcome" for 127.0.0.1 at 2018-01-25 13:15:16 -0200
 Processing by WelcomeController#index as HTML
   Rendered welcome/index.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-26 21:55:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 955ms (Views: 890.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/contamination_reports.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/report.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/inventories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/scaffolds.self-61cdc6d502c7301984ec0223a89d845a2384dfed8c754b5e94b2b6a4078f6a87.css?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/survivors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/jquery.self-c03f4eaf1119e6e68820418ad53c328101312ebc906325c60ad7c32edaa360b7.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/contamination_reports.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/inventories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/report.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/survivors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2018-02-26 21:55:33 -0300
+
+
+Started GET "/survivors" for 127.0.0.1 at 2018-02-26 21:55:34 -0300
+Processing by SurvivorsController#index as HTML
+  [1m[35mSurvivor Load (0.3ms)[0m  SELECT "survivors".* FROM "survivors"
+  Rendered survivors/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 159ms (Views: 75.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-02-26 21:55:44 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2018-02-26 21:55:47 -0300
+Processing by ReportController#index as HTML
+  Rendered report/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/report/infected" for 127.0.0.1 at 2018-02-26 21:55:49 -0300
+Processing by ReportController#infected as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "survivors"[0m
+  [1m[35mSurvivor Load (0.2ms)[0m  SELECT "survivors".* FROM "survivors"
+  [1m[36mContaminationReport Load (0.3ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 1]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 2]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 3]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 4]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(*) FROM "survivors"[0m
+Completed 200 OK in 117ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/report/infected" for 127.0.0.1 at 2018-02-26 21:55:49 -0300
+Processing by ReportController#infected as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "survivors"
+  [1m[36mSurvivor Load (0.1ms)[0m  [1mSELECT "survivors".* FROM "survivors"[0m
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 1]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 2]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 3]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "survivors"
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2018-02-26 21:55:53 -0300
+Processing by ReportController#index as HTML
+  Rendered report/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/report/non_infected" for 127.0.0.1 at 2018-02-26 21:55:55 -0300
+Processing by ReportController#non_infected as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "survivors"[0m
+  [1m[35mSurvivor Load (0.2ms)[0m  SELECT "survivors".* FROM "survivors"
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 1]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 2]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 3]]
+  [1m[35mContaminationReport Load (0.0ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "survivors"[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/report/non_infected" for 127.0.0.1 at 2018-02-26 21:55:55 -0300
+Processing by ReportController#non_infected as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "survivors"
+  [1m[36mSurvivor Load (0.1ms)[0m  [1mSELECT "survivors".* FROM "survivors"[0m
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 1]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 2]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 3]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "survivors"
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2018-02-26 21:55:57 -0300
+Processing by ReportController#index as HTML
+  Rendered report/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/report/average_resources" for 127.0.0.1 at 2018-02-26 21:55:58 -0300
+Processing by ReportController#average_resources as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "survivors"[0m
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT "survivors".* FROM "survivors"
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 1]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 2]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 3]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 4]]
+  [1m[36mInventory Load (0.2ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."survivor_id" = ? LIMIT 1[0m  [["survivor_id", 3]]
+  [1m[35mInventory Load (0.1ms)[0m  SELECT  "inventories".* FROM "inventories" WHERE "inventories"."survivor_id" = ? LIMIT 1  [["survivor_id", 4]]
+Completed 200 OK in 45ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/report/average_resources" for 127.0.0.1 at 2018-02-26 21:55:59 -0300
+Processing by ReportController#average_resources as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "survivors"[0m
+  [1m[35mSurvivor Load (0.2ms)[0m  SELECT "survivors".* FROM "survivors"
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 1]]
+  [1m[35mContaminationReport Load (0.2ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 2]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 3]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 4]]
+  [1m[36mInventory Load (0.1ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."survivor_id" = ? LIMIT 1[0m  [["survivor_id", 3]]
+  [1m[35mInventory Load (0.1ms)[0m  SELECT  "inventories".* FROM "inventories" WHERE "inventories"."survivor_id" = ? LIMIT 1  [["survivor_id", 4]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2018-02-26 21:56:03 -0300
+Processing by ReportController#index as HTML
+  Rendered report/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/report/points_lost" for 127.0.0.1 at 2018-02-26 21:56:04 -0300
+Processing by ReportController#points_lost as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "survivors"[0m
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT "survivors".* FROM "survivors"
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 1]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 2]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 3]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 4]]
+  [1m[36mInventory Load (0.1ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."survivor_id" = ? LIMIT 1[0m  [["survivor_id", 1]]
+  [1m[35mInventory Load (0.1ms)[0m  SELECT  "inventories".* FROM "inventories" WHERE "inventories"."survivor_id" = ? LIMIT 1  [["survivor_id", 2]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/report/points_lost" for 127.0.0.1 at 2018-02-26 21:56:04 -0300
+Processing by ReportController#points_lost as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "survivors"[0m
+  [1m[35mSurvivor Load (0.2ms)[0m  SELECT "survivors".* FROM "survivors"
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 1]]
+  [1m[35mContaminationReport Load (0.2ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 2]]
+  [1m[36mContaminationReport Load (0.1ms)[0m  [1mSELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?[0m  [["survivor_id", 3]]
+  [1m[35mContaminationReport Load (0.1ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports" WHERE "contamination_reports"."survivor_id" = ?  [["survivor_id", 4]]
+  [1m[36mInventory Load (0.1ms)[0m  [1mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."survivor_id" = ? LIMIT 1[0m  [["survivor_id", 1]]
+  [1m[35mInventory Load (0.0ms)[0m  SELECT  "inventories".* FROM "inventories" WHERE "inventories"."survivor_id" = ? LIMIT 1  [["survivor_id", 2]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/report" for 127.0.0.1 at 2018-02-26 21:56:07 -0300
+Processing by ReportController#index as HTML
+  Rendered report/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-02-26 21:56:08 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/survivors" for 127.0.0.1 at 2018-02-26 21:56:09 -0300
+Processing by SurvivorsController#index as HTML
+  [1m[36mSurvivor Load (0.2ms)[0m  [1mSELECT "survivors".* FROM "survivors"[0m
+  Rendered survivors/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2018-02-26 22:08:51 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contamination_reports" for 127.0.0.1 at 2018-02-26 22:08:53 -0300
+Processing by ContaminationReportsController#index as HTML
+  [1m[35mContaminationReport Load (0.4ms)[0m  SELECT "contamination_reports".* FROM "contamination_reports"
+  [1m[36mSurvivor Load (0.5ms)[0m  [1mSELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSurvivor Load (0.1ms)[0m  [1mSELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSurvivor Load (0.1ms)[0m  [1mSELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered contamination_reports/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 79ms (Views: 74.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-26 22:08:58 -0300
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-26 22:31:42 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 241ms (Views: 232.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/survivors" for 127.0.0.1 at 2018-02-26 22:31:45 -0300
+Processing by SurvivorsController#index as HTML
+  [1m[35mSurvivor Load (0.2ms)[0m  SELECT "survivors".* FROM "survivors"
+  Rendered survivors/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 50ms (Views: 43.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/survivors/new" for 127.0.0.1 at 2018-02-26 22:31:46 -0300
+Processing by SurvivorsController#new as HTML
+  Rendered survivors/_form.html.erb (127.5ms)
+  Rendered survivors/new.html.erb within layouts/application (146.3ms)
+Completed 200 OK in 204ms (Views: 203.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/inventories" for 127.0.0.1 at 2018-02-26 22:31:53 -0300
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.8ms)[0m  [1mSELECT "inventories".* FROM "inventories"[0m
+  [1m[35mSurvivor Load (0.2ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSurvivor Load (0.1ms)[0m  [1mSELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSurvivor Load (0.1ms)[0m  [1mSELECT  "survivors".* FROM "survivors" WHERE "survivors"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered inventories/index.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 96ms (Views: 90.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/inventories/new" for 127.0.0.1 at 2018-02-26 22:31:56 -0300
+Processing by InventoriesController#new as HTML
+  [1m[35mSurvivor Load (0.1ms)[0m  SELECT "survivors".* FROM "survivors"
+  Rendered inventories/_form.html.erb (4.3ms)
+  Rendered inventories/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 76ms (Views: 75.2ms | ActiveRecord: 0.1ms)
